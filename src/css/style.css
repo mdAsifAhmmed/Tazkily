@@ -84,16 +84,18 @@ body {
     flex-direction: row;
     scroll-behavior: smooth;
 }
-.miniitemslider{
+
+.miniitemslider {
 
     display: flex;
     flex-direction: row;
     scroll-behavior: smooth;
 }
 
-.miniitemslider::-webkit-scrollbar{
+.miniitemslider::-webkit-scrollbar {
     display: none;
 }
+
 .product-container1::-webkit-scrollbar {
     display: none;
 }
@@ -106,14 +108,15 @@ body {
     margin-right: 40px;
 }
 
-.miniNavMenu{
+.miniNavMenu {
     display: block !important;
 }
-.miniNavMenuClose{
+
+.miniNavMenuClose {
     display: none !important;
 }
 
-.miniNavMenuHiden{
+.miniNavMenuHiden {
     height: 350px !important;
     padding: 2.5rem 0rem 2.5rem 0rem !important;
     transition: all ease-in-out 0.5s;
@@ -123,16 +126,88 @@ body {
     -o-transition: all ease-in-out 0.5s;
 }
 
-.miniNav{
+.miniNav {
     background-color: rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     height: 0px;
     overflow: hidden;
-    padding: 0px ;
+    padding: 0px;
     transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
     -ms-transition: all ease-in-out 0.5s;
     -o-transition: all ease-in-out 0.5s;
+}
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 104px;
+    height: 32px;
+    margin: 0 16px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 38px;
+    left: 9px;
+    bottom: 6px;
+    background-color: #8828FF;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #8828FF;
+}
+
+input:checked+.slider:before {
+    background-color: #ffffff;
+}
+
+/* input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+} */
+
+input:checked+.slider:before {
+    transform: translateX(48px);
+    -webkit-transform: translateX(48px);
+    -ms-transform: translateX(48px);
+    -moz-transform: translateX(48px);
+    -o-transform: translateX(48px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
 }

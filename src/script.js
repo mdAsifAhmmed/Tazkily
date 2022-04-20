@@ -9,49 +9,107 @@ const menuBtn = document.querySelector('.menuBtn')
 const miniNav = document.querySelector('.miniNav')
 const menuBtnClose = document.querySelector('.menuBtnClose')
 
+const miniLchangeBtn = document.querySelector('.miniLchangeBtn')
+const miniLaddChangeBtn = document.querySelector('.miniLaddChangeBtn')
+const miniRchangeBtn = document.querySelector('.miniRchangeBtn')
+const miniRaddChangeBtn = document.querySelector('.miniRaddChangeBtn')
+
+const LchangeBtn = document.querySelector('.LchangeBtn')
+const LaddChangeBtn = document.querySelector('.LaddChangeBtn')
+const RchangeBtn = document.querySelector('.RchangeBtn')
+const RaddChangeBtn = document.querySelector('.RaddChangeBtn')
+
 productContainers.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
 
+    // console.log(containerWidth);
+
     nxtBtn[i].addEventListener('click', () => {
         item.scrollLeft -= containerWidth;
+        // console.log(item.scrollLeft -= containerWidth);
+        // console.log(-(containerWidth));
+        if (i = -(containerWidth - 148) && -(containerWidth), (item.scrollLeft -= containerWidth) === i) {
+            LchangeBtn.classList.remove('miniNavMenuClose')
+            LaddChangeBtn.classList.remove('miniNavMenu')
+
+        }
+        if (i = containerWidth * 2, (item.scrollLeft -= containerWidth) != i) {
+            RchangeBtn.classList.remove('miniNavMenu')
+            RaddChangeBtn.classList.remove('miniNavMenuClose')
+        }
     })
 
     preBtn[i].addEventListener('click', () => {
         item.scrollLeft += containerWidth;
+        console.log(item.scrollLeft += containerWidth);
+
+        if (i = containerWidth, (item.scrollLeft += containerWidth) === i) {
+            LchangeBtn.classList.add('miniNavMenuClose')
+            LaddChangeBtn.classList.add('miniNavMenu')
+        }
+        if (i = containerWidth * 2, item.scrollLeft += containerWidth == i) {
+            RchangeBtn.classList.add('miniNavMenu')
+            RaddChangeBtn.classList.add('miniNavMenuClose')
+
+            console.log("same")
+        }
+
     })
+
 })
 
 miniitemslider.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
 
+    console.log(containerWidth);
+
     minisliderbtn1[i].addEventListener('click', () => {
-        item.scrollLeft -=  containerWidth;
+        item.scrollLeft -= containerWidth;
+        // console.log(item.scrollLeft -= containerWidth);
+        if (i = 0, (item.scrollLeft -= containerWidth) === i) {
+            miniLaddChangeBtn.classList.remove('miniNavMenu')
+            miniLchangeBtn.classList.remove('miniNavMenuClose')
+        }
+        if (i = containerWidth, (item.scrollLeft -= containerWidth) === i) {
+            miniRchangeBtn.classList.remove('miniNavMenu')
+        }
+        if (i = containerWidth, (item.scrollLeft -= containerWidth) === i) {
+            miniRaddChangeBtn.classList.remove('miniNavMenuClose')
+        }
+
     })
     minisliderbtn2[i].addEventListener('click', () => {
 
         item.scrollLeft += containerWidth;
+        // console.log(item.scrollLeft += containerWidth);
+        if (i = 0, (item.scrollLeft += containerWidth) > i) {
+            miniLaddChangeBtn.classList.add('miniNavMenu')
+            miniLchangeBtn.classList.add('miniNavMenuClose')
+        }
+        if (i = containerWidth * 2, item.scrollLeft += containerWidth == i) {
+            miniRaddChangeBtn.classList.add('miniNavMenuClose')
+            miniRchangeBtn.classList.add('miniNavMenu')
+        }
     })
 })
 
-menuBtn.addEventListener('click',()=>{
+menuBtn.addEventListener('click', () => {
     // menuBtnClose btn add 
     menuBtnClose.classList.add('miniNavMenu')
     // menuBtn btn remove
     menuBtn.classList.add('miniNavMenuClose')
     // miniNav menu add
-    // miniNav.classList.add('miniNavMenu')
     miniNav.classList.add('miniNavMenuHiden')
 })
 
-menuBtnClose.addEventListener('click',()=>{
+menuBtnClose.addEventListener('click', () => {
     // menuBtn btn add
     menuBtn.classList.remove('miniNavMenuClose')
     // menuBtnClose btn reomove
     menuBtnClose.classList.remove('miniNavMenu')
     // miniNav menu remove
-    // miniNav.classList.remove('miniNavMenu')
     miniNav.classList.remove('miniNavMenuHiden')
-    
+
 })
