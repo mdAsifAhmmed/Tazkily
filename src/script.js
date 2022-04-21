@@ -19,16 +19,26 @@ const LaddChangeBtn = document.querySelector('.LaddChangeBtn')
 const RchangeBtn = document.querySelector('.RchangeBtn')
 const RaddChangeBtn = document.querySelector('.RaddChangeBtn')
 
+
+const navMenuItems = document.getElementById('navMenuWhapper')
+const navs = navMenuItems.getElementsByClassName('navMenuItem')
+
+
+for (var i = 0; i < navs.length; i++) {
+    navs[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("activeMenu");
+        current[0].className = current[0].className.replace(" activeMenu", "");
+        this.className += " activeMenu";
+    });
+}
+
+
 productContainers.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
 
-    // console.log(containerWidth);
-
     nxtBtn[i].addEventListener('click', () => {
         item.scrollLeft -= containerWidth;
-        // console.log(item.scrollLeft -= containerWidth);
-        // console.log(-(containerWidth));
         if (i = -(containerWidth - 148) && -(containerWidth), (item.scrollLeft -= containerWidth) === i) {
             LchangeBtn.classList.remove('miniNavMenuClose')
             LaddChangeBtn.classList.remove('miniNavMenu')
@@ -51,8 +61,6 @@ productContainers.forEach((item, i) => {
         if (i = containerWidth * 2, item.scrollLeft += containerWidth == i) {
             RchangeBtn.classList.add('miniNavMenu')
             RaddChangeBtn.classList.add('miniNavMenuClose')
-
-            console.log("same")
         }
 
     })
@@ -63,11 +71,8 @@ miniitemslider.forEach((item, i) => {
     let containerDimensions = item.getBoundingClientRect();
     let containerWidth = containerDimensions.width;
 
-    console.log(containerWidth);
-
     minisliderbtn1[i].addEventListener('click', () => {
         item.scrollLeft -= containerWidth;
-        // console.log(item.scrollLeft -= containerWidth);
         if (i = 0, (item.scrollLeft -= containerWidth) === i) {
             miniLaddChangeBtn.classList.remove('miniNavMenu')
             miniLchangeBtn.classList.remove('miniNavMenuClose')
@@ -83,7 +88,7 @@ miniitemslider.forEach((item, i) => {
     minisliderbtn2[i].addEventListener('click', () => {
 
         item.scrollLeft += containerWidth;
-        // console.log(item.scrollLeft += containerWidth);
+
         if (i = 0, (item.scrollLeft += containerWidth) > i) {
             miniLaddChangeBtn.classList.add('miniNavMenu')
             miniLchangeBtn.classList.add('miniNavMenuClose')

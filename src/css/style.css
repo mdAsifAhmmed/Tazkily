@@ -211,3 +211,9 @@ input:checked+.slider:before {
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
 }
+
+
+.activeMenu {
+    color: #7b38ce !important;
+}
+
